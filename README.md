@@ -4,6 +4,7 @@
 ### Quick start
 ```bash
 ### airflow - k8s ###
+
 # step 1) install airflow source code
 minikube start --memory='4g' --kubernetes-version=v1.14.10
 cd minikube-airflow
