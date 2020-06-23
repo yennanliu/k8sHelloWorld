@@ -1,6 +1,19 @@
 # k8sHelloWorld
 
 
+### Quick start
+```bash
+### airflow - k8s ###
+minikube start --memory='4g' --kubernetes-version=v1.14.10
+cd minikube-airflow
+git clone https://github.com/apache/airflow.git
+git checkout c8597cbf143b970ad3c7b0d62e3b44d1dfdc8afe # make Airflow in verison=1.10.7
+# update Update Build Script : scripts/ci/kubernetes/docker/build.sh
+# -> comment "kind load docker-image "${IMAGE}:${TAG}""
+
+
+```
+
 ### Ref 
 - Airflow
 	- https://gist.github.com/kppullin/54d07f557c7c64c321786d6ed40b46e1
