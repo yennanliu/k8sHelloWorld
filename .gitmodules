@@ -1,0 +1,3 @@
+[submodule "apache/airflow"]
+	path = apache/airflow
+	url = https://github.com/apache/airflow
