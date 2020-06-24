@@ -1,6 +1,6 @@
 [submodule "apache/airflow"]
 	path = apache/airflow
-	url = https://github.com/apache/airflow
+	url = https://github.com/apache/airflow.git
 [submodule "godatadriven/airflow-helm"]
 	path = godatadriven/airflow-helm
 	url = https://github.com/godatadriven/airflow-helm.git
