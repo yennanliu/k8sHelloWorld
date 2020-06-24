@@ -24,8 +24,25 @@ export AIRFLOW_CONTAINER_DOCKER_IMAGE=apache/airflow:v1-10-test-python3.5-ci
 
 ```
 
+```bash
+### azure vote app ###
+
+### prerequisite 
+# 1) install az (Azure CLI)
+# 2) az auth (k8s)
+az aks get-credentials --resource-group <your_resource_group> --name <your_k8s_cluster_name>
+az aks browse --resource-group <your_resource_group> --name <your_k8s_cluster_name>
+
+# https://docs.microsoft.com/zh-tw/azure/aks/kubernetes-walkthrough
+kubectl apply -f azure-vote-all-in-one-redis.yaml
+# get k8s status 
+kubectl get service azure-vote-front --watch
+```
+
 ### Ref 
 - Airflow
 	- https://gist.github.com/kppullin/54d07f557c7c64c321786d6ed40b46e1
 	- https://github.com/Sureya/airflow_k8s_executor/
 	- https://www.coderbridge.com/@FrankYang0529/aecbf64852184efc8674d47bebe823aa
+	- https://www.techatbloomberg.com/blog/airflow-on-kubernetes/
+	- https://docs.bitnami.com/tutorials/deploy-apache-airflow-kubernetes-helm/
