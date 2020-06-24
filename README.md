@@ -3,7 +3,8 @@
 
 ### Quick start
 ```bash
-### airflow - k8s ###
+### airflow - k8s V1 ###
+# https://www.coderbridge.com/@FrankYang0529/aecbf64852184efc8674d47bebe823aa
 
 # step 1) install airflow source code
 minikube start --memory='4g' --kubernetes-version=v1.14.10
@@ -30,6 +31,29 @@ kubectl get pods
 
 # step 7) open airflow web server
 minikube service airflow 
+
+```
+
+```bash
+### airflow - k8s V2 ###
+# https://kubernetes.io/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/
+
+# step 1)
+cd apache/airflow
+sed -ie "s/KubernetesExecutor/LocalExecutor/g" scripts/ci/kubernetes/kube/configmaps.yaml
+./scripts/ci/kubernetes/Docker/build.sh
+./scripts/ci/kubernetes/kube/deploy.sh
+
+# step 2) Log into your webserver 
+WEB=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep "airflow" | head -1)
+kubectl port-forward $WEB 8080:8080
+
+# step 3) access the airflow UI
+# localhost:8080
+# account = airflow, pass = airflow
+
+# step 4) Upload a test document
+kubectl cp <local file> <namespace>/<pod>:/root/airflow/dags -c scheduler
 
 ```
 
