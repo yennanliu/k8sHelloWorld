@@ -1,0 +1,10 @@
+global:
+  postgresqlEnabled: true
+postgresql:
+  replication:
+    enabled: true
+    slaveReplicas: 2
+    synchronousCommit: on
+    numSynchronousReplicas: 1
+  metrics:
+    enabled: true

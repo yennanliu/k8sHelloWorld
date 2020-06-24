@@ -59,6 +59,7 @@ kubectl cp <local file> <namespace>/<pod>:/root/airflow/dags -c scheduler
 
 ```bash
 ### azure vote app ###
+# https://docs.microsoft.com/zh-tw/azure/aks/kubernetes-walkthrough
 
 ### prerequisite 
 # 1) install az (Azure CLI)
@@ -66,7 +67,6 @@ kubectl cp <local file> <namespace>/<pod>:/root/airflow/dags -c scheduler
 az aks get-credentials --resource-group <your_resource_group> --name <your_k8s_cluster_name>
 az aks browse --resource-group <your_resource_group> --name <your_k8s_cluster_name>
 
-# https://docs.microsoft.com/zh-tw/azure/aks/kubernetes-walkthrough
 kubectl apply -f azure-vote-all-in-one-redis.yaml
 # get k8s status 
 kubectl get service azure-vote-front --watch
@@ -79,3 +79,4 @@ kubectl get service azure-vote-front --watch
 	- https://www.coderbridge.com/@FrankYang0529/aecbf64852184efc8674d47bebe823aa
 	- https://www.techatbloomberg.com/blog/airflow-on-kubernetes/
 	- https://docs.bitnami.com/tutorials/deploy-apache-airflow-kubernetes-helm/
+	- https://www.astronomer.io/docs/ee-installation-aks/
