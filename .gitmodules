@@ -4,3 +4,6 @@
 [submodule "godatadriven/airflow-helm"]
 	path = godatadriven/airflow-helm
 	url = https://github.com/godatadriven/airflow-helm.git
+[submodule "docker-airflow"]
+	path = docker-airflow
+	url = https://github.com/puckel/docker-airflow.git
