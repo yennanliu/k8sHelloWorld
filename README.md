@@ -22,6 +22,15 @@ eval $(minikube docker-env)
 export AIRFLOW_CONTAINER_DOCKER_IMAGE=apache/airflow:v1-10-test-python3.5-ci
 ./scripts/ci/kubernetes/docker/build.sh
 
+# step 5) deploy airflow 
+./scripts/ci/kubernetes/app/deploy_app.sh -d git_mode
+
+# step 6) check airflow pods
+kubectl get pods
+
+# step 7) open airflow web server
+minikube service airflow 
+
 ```
 
 ```bash
