@@ -1,0 +1,21 @@
+airflow:
+  fernetKey: 1wsWqzSL9r_9TOL653DdIL8Jz_qZyUA6L_NkmVsxCpg=
+  image:
+    repository: youracrservice.azurecr.io/custom-docker-airflow
+    tag: 1.10.2
+    pullPolicy: IfNotPresent
+    pullSecret: acr-auth
+  imageCredentials:
+    registry: youracrservice.azurecr.io
+    username: youracrservice
+    password: password-for-azure-container-registry
+  persistence:
+    filestore:
+      storageAccountName: yourazuresstorageaccountname
+      storageAccountKey: yourazurestorageaccountkey
+    logs:
+      secretName: logssecret
+      shareName: yourlogssharename
+    dags:
+      secretName: dagssecret
+      shareName: yourdagssharename
