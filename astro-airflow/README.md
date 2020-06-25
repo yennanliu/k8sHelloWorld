@@ -19,4 +19,5 @@ kubectl get pods
 # run the airflow web server
 kubectl port-forward svc/airflow-webserver 8080:8080
 # then go to http://127.0.0.1:8080/login/ for the app
+# account : admin, pass : admin
 ```
