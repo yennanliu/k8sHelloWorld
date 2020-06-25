@@ -78,5 +78,7 @@ kubectl get service azure-vote-front --watch
 	- https://github.com/Sureya/airflow_k8s_executor/
 	- https://www.coderbridge.com/@FrankYang0529/aecbf64852184efc8674d47bebe823aa
 	- https://www.techatbloomberg.com/blog/airflow-on-kubernetes/
+- Airflow on Azure
+	- https://godatadriven.com/blog/deploying-apache-airflow-on-azure-kubernetes-service/
 	- https://docs.bitnami.com/tutorials/deploy-apache-airflow-kubernetes-helm/
 	- https://www.astronomer.io/docs/ee-installation-aks/
