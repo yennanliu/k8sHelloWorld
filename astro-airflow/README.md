@@ -3,7 +3,7 @@
 
 ### Quick start
 ```bash
-kubectl create namespace airflow
+kubectl create namespace airflow2
 
 helm repo add astronomer https://helm.astronomer.io
 helm install airflow --namespace airflow2 astronomer/airflow
@@ -18,4 +18,5 @@ kubectl get pods
 
 # run the airflow web server
 kubectl port-forward svc/airflow-webserver 8080:8080
+# then go to http://127.0.0.1:8080/login/ for the app
 ```
